@@ -5,20 +5,16 @@ var assert = require('yeoman-generator').assert;
 var helpers = require('yeoman-generator').test;
 var os = require('os');
 
-describe('keystonejs-builder:app', function () {
+describe('keystonejs-builder:model', function () {
   before(function (done) {
-    helpers.run(path.join(__dirname, '../app'))
+    helpers.run(path.join(__dirname, '../model'))
+      .withArguments('User')
       .withOptions({ skipInstall: true })
       .withPrompts({ someOption: true })
       .on('end', done);
   });
 
-  it('creates files', function () {
-    assert.file([
-      'bower.json',
-      'package.json',
-      '.editorconfig',
-      '.jshintrc'
-    ]);
+  it('creates a model file', function () {
+    assert.file(['User.js']);
   });
 });
