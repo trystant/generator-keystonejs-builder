@@ -7,7 +7,12 @@ var keystone = require('keystone'),
  */
 
 // Model creation
- var <%= modelName %> = new keystone.List('<%= modelName %>', {
-	map: { name: 'title' },
-	autokey: { path: 'slug', from: 'title', unique: true }
-});
+ var <%= modelName %> = new keystone.List('<%= modelName %>');
+
+
+ /**
+ * Registration
+ */
+
+<%= modelName %>.defaultColumns = '';
+<%= modelName %>.register();

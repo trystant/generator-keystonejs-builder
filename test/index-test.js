@@ -21,10 +21,17 @@ describe('keystonejs-builder:model <model>', function () {
       assert.file(['models/User.js']);
     });
 
-    it('changes {modelName} to User in the file', function () {
+    it('changes {modelName} in the destination file', function () {
       assert.fileContent('models/User.js', 'User');
     });
 
+    it('instantiates the model', function () {
+      assert.fileContent('models/User.js', "var User = new keystone.List('User');");
+    });
+
+    it('registers the model', function () {
+      assert.fileContent('models/User.js', "User.register();");
+    });
   });
 
   describe("on failure", function() {
