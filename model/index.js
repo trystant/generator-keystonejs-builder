@@ -5,9 +5,11 @@ var yosay = require('yosay');
 
 module.exports = yeoman.generators.NamedBase.extend({
   model: function() {
-    this.fs.copy(
+    this.fs.copyTpl(
       this.templatePath('model.js'),
-      this.destinationPath(this.name + '.js')
+      this.destinationPath(this.name + '.js'),
+      { modelName: this.name }
     );
+
   }
 });
