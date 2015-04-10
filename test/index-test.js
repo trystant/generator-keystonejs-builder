@@ -7,7 +7,7 @@ var os = require('os');
 
 
 
-describe('keystonejs-builder:model User', function () {
+describe('keystonejs-builder:model <model>', function () {
   describe("on success", function() {
     beforeEach(function (done) {
       helpers.run(path.join(__dirname, '../model'))
@@ -18,11 +18,11 @@ describe('keystonejs-builder:model User', function () {
     });
 
     it('creates a model file', function () {
-      assert.file(['User.js']);
+      assert.file(['models/User.js']);
     });
 
     it('changes {modelName} to User in the file', function () {
-      assert.fileContent('User.js', 'User');
+      assert.fileContent('models/User.js', 'User');
     });
 
   });

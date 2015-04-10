@@ -7,7 +7,7 @@ module.exports = yeoman.generators.NamedBase.extend({
   model: function() {
     this.fs.copyTpl(
       this.templatePath('model.js'),
-      this.destinationPath(this.name + '.js'),
+      this.destinationPath('models/' + this.name + '.js'),
       { modelName: this.name }
     );
 
