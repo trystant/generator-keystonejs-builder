@@ -1,6 +1,6 @@
 {
   "name": "generator-keystonejs-builder",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
@@ -14,7 +14,6 @@
     "test": "mocha"
   },
   "files": [
-    "model",
     "model",
     "controller"
   ],
