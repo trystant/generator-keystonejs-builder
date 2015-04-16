@@ -10,9 +10,16 @@ var keystone = require('keystone'),
  var <%= modelName %> = new keystone.List('<%= modelName %>');
 
 
- /**
- * Registration
- */
+
+// Provide access to Keystone
+<%= modelName %>.schema.virtual('canAccessKeystone').get(function() {
+	return this.isAdmin;
+});
+
+
+/**
+* Registration
+*/
 
 <%= modelName %>.defaultColumns = '';
 <%= modelName %>.register();

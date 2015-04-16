@@ -14,7 +14,9 @@
     "test": "mocha"
   },
   "files": [
-    "model"
+    "model",
+    "model",
+    "controller"
   ],
   "keywords": [
     "yeoman-generator"
